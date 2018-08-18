@@ -21,7 +21,18 @@ namespace RBGameEngine
 
         protected override void Update()
         {
-            base.Update();
+            if (Input.GetKeyDown(OpenTK.Input.Key.A))
+            {
+                Console.WriteLine("The 'A' key has been pressed.");
+            }
+            else if (Input.GetKeyUp(OpenTK.Input.Key.A))
+            {
+                Console.WriteLine("The 'A' key has been released.");
+            }
+            else if (Input.GetKey(OpenTK.Input.Key.A))
+            {
+                Console.WriteLine("The 'A' key is being held.");
+            }
         }
 
         protected override void Render()

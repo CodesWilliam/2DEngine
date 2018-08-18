@@ -23,6 +23,7 @@ namespace RBGameEngine
 
         protected override void OnUpdateFrame(FrameEventArgs e)
         {
+            Input.Update();
             Update();
         }
 
@@ -35,6 +36,12 @@ namespace RBGameEngine
         {
             ShutDown();
             Dispose();
+            
+        }
+
+        protected override void OnFocusedChanged(EventArgs e)
+        {
+            Input.focused = Focused;
         }
 
         //Virtual Methods Override the classes above to put our values into.
