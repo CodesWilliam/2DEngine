@@ -8,7 +8,7 @@ namespace RBGameEngine
 {
 
     /*TestGame.cs
-     * this is to test the methods and override anything that may need to be overridden
+     * this is to test the methods and override anything that may need to be overridden for testing purposes.
      */
     class TestGame : Game
     {
@@ -21,18 +21,7 @@ namespace RBGameEngine
 
         protected override void Update()
         {
-            if (Input.GetKeyDown(OpenTK.Input.Key.A))
-            {
-                Console.WriteLine("The 'A' key has been pressed.");
-            }
-            else if (Input.GetKeyUp(OpenTK.Input.Key.A))
-            {
-                Console.WriteLine("The 'A' key has been released.");
-            }
-            else if (Input.GetKey(OpenTK.Input.Key.A))
-            {
-                Console.WriteLine("The 'A' key is being held.");
-            }
+            base.Update();
         }
 
         protected override void Render()

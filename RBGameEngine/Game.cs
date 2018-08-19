@@ -11,8 +11,19 @@ namespace RBGameEngine
 {
     public abstract class Game : GameWindow
     {
+        private static Game instance;
+        public static Game Instance
+        {
+            get { return instance; }
+        }
+
         public Game(int width, int height, string title) : base(width, height, GraphicsMode.Default, title)
         {
+            if(instance != null)
+            {
+                Console.WriteLine("You should never have more than one game class!");
+            }
+            instance = this;
             Run();
         }
 
@@ -37,11 +48,6 @@ namespace RBGameEngine
             ShutDown();
             Dispose();
             
-        }
-
-        protected override void OnFocusedChanged(EventArgs e)
-        {
-            Input.focused = Focused;
         }
 
         //Virtual Methods Override the classes above to put our values into.
