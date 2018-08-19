@@ -8,7 +8,7 @@ namespace RBGameEngine
 {
 
     /*TestGame.cs
-     * this is to test the methods and override anything that may need to be overridden
+     * this is to test the methods and override anything that may need to be overridden for testing purposes.
      */
     class TestGame : Game
     {
