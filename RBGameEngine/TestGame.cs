@@ -21,7 +21,20 @@ namespace RBGameEngine
 
         protected override void Update()
         {
-            base.Update();
+
+            //testing the input system and changing colors via button press on the keyboard.
+            if (Input.GetKeyDown(OpenTK.Input.Key.G))
+            {
+                RenderingSystem.SetClearColor(0, 1);  //sets to green
+            }
+            else if (Input.GetKeyDown(OpenTK.Input.Key.B))
+            {
+                RenderingSystem.SetClearColor(0, 0, 1);     //sets to blue
+            }
+            else if (Input.GetKeyDown(OpenTK.Input.Key.R))
+            {
+                RenderingSystem.SetClearColor(1);       //sets to red
+            }
         }
 
         protected override void Render()
