@@ -30,6 +30,7 @@ namespace RBGameEngine
         protected override void OnLoad(EventArgs e)
         {
             Initialize();
+            RenderingSystem.Init(1);     //Red clear color
         }
 
         protected override void OnUpdateFrame(FrameEventArgs e)
@@ -40,7 +41,9 @@ namespace RBGameEngine
 
         protected override void OnRenderFrame(FrameEventArgs e)
         {
+            RenderingSystem.ClearScreen();
             Render();
+            SwapBuffers();
         }
 
         protected override void OnClosed(EventArgs e)
