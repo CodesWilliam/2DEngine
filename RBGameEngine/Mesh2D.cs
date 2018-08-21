@@ -35,7 +35,16 @@ namespace RBGameEngine
 
         public void Draw()
         {
+            GL.EnableVertexAttribArray(0);
 
+            GL.BindBuffer(BufferTarget.ArrayBuffer, vboID);
+            GL.VertexAttribPointer(0, Vertex.VertexSize, VertexAttribPointerType.Float, false, Vertex.VertexSize * 4, 0);
+
+            GL.DrawArrays(PrimitiveType.Triangles, 0, size);
+
+            GL.BindBuffer(BufferTarget.ArrayBuffer, 0);
+
+            GL.DisableVertexAttribArray(0);
         }
     }
 }

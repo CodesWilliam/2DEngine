@@ -14,9 +14,18 @@ namespace RBGameEngine
     {
         public TestGame(int width, int height, string title) : base(width, height, title) { }
 
+        private Mesh2D mesh2D;
+
         protected override void Initialize()
         {
-            base.Initialize();
+            Vertex[] vertices = new Vertex[]
+            {
+                new Vertex(-1f, -1f),
+                new Vertex(1f, -1f),
+                new Vertex(0f, 1f),
+            };
+
+            mesh2D = new Mesh2D(vertices);
         }
 
         protected override void Update()
@@ -39,7 +48,7 @@ namespace RBGameEngine
 
         protected override void Render()
         {
-            base.Render();
+            mesh2D.Draw();
         }
 
         protected override void ShutDown()

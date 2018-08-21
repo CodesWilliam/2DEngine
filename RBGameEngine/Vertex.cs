@@ -11,7 +11,7 @@ namespace RBGameEngine
     public class Vertex
     {
 
-        private const int VertexSize = 2;
+        public const int VertexSize = 2;
         private Vector2 position;
 
         //Properties
@@ -25,6 +25,8 @@ namespace RBGameEngine
         {
             this.position = position;
         }
+
+        public Vertex(float x, float y) : this(new Vector2(x, y)) { }
 
         public static float[] Process(Vertex[] vertices)
         {
