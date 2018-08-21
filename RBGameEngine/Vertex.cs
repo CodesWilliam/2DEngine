@@ -35,7 +35,7 @@ namespace RBGameEngine
             for(int i = 0; i < vertices.Length; i++)
             {
                 data[i] = vertices[i].Position.X;
-                data[i++] = vertices[i].Position.Y;
+                data[i] = vertices[i].Position.Y;
             }
 
             return data;
