@@ -30,12 +30,16 @@ namespace RBGameEngine
 
         public static float[] Process(Vertex[] vertices)
         {
+            int count = 0;
+
             float[] data = new float[vertices.Length * VertexSize];  //multiplying by 2 due to having 2 types in Vector2
 
             for(int i = 0; i < vertices.Length; i++)
             {
-                data[i] = vertices[i].Position.X;
-                data[i++] = vertices[i].Position.Y;
+                data[count] = vertices[i].Position.X;
+                data[count + 1] = vertices[i].Position.Y;
+
+                count += 2;
             }
 
             return data;
