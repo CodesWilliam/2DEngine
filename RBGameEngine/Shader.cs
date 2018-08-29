@@ -38,9 +38,8 @@ namespace RBGameEngine
             //method variables
             string shader = ReadShader(fileName);
             int shaderID = GL.CreateShader(type);
-            int compileStatus;
 
-            if(shaderID == 0)
+            if (shaderID == 0)
             {
                 Console.WriteLine("Error creating shader: Could not generate the shader buffer.");
                 Environment.Exit(1);
@@ -51,7 +50,7 @@ namespace RBGameEngine
             //Get the shager compile status and pass out to compileStatus
             GL.ShaderSource(shaderID, shader);
             GL.CompileShader(shaderID);
-            GL.GetShader(shaderID, ShaderParameter.CompileStatus, out compileStatus);
+            GL.GetShader(shaderID, ShaderParameter.CompileStatus, out int compileStatus);
 
             //test for compileStatus being equal to 0
             //if equal to 0 write to console stating there was an error
@@ -67,13 +66,11 @@ namespace RBGameEngine
 
         private void CompileShader()
         {
-            int linkStatus;
-            int validationStatus;
 
             //Link the program with GL.LinkProgram to the programID
             //Get the status of the program and pass it to the linkStatus
             GL.LinkProgram(programID);
-            GL.GetProgram(programID, GetProgramParameterName.LinkStatus, out linkStatus);
+            GL.GetProgram(programID, GetProgramParameterName.LinkStatus, out int linkStatus);
 
             //Test if the linkStatus is equal to 0
             //if equal to 0 write to the console that there was an error
@@ -89,7 +86,7 @@ namespace RBGameEngine
             //Validate the program to the programID
             //Get the program status and out put to the validationStatus
             GL.ValidateProgram(programID);
-            GL.GetProgram(programID, GetProgramParameterName.ValidateStatus, out validationStatus);
+            GL.GetProgram(programID, GetProgramParameterName.ValidateStatus, out int validationStatus);
 
             //Check if validationStatus is equal to 0
             //Write to the console if there is an error stating could not validate
