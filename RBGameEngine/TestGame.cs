@@ -15,9 +15,12 @@ namespace RBGameEngine
         public TestGame(int width, int height, string title) : base(width, height, title) { }
 
         private Mesh2D mesh2D;
+        private Shader shader;
 
         protected override void Initialize()
         {
+            shader = new Shader("Resources/Shader/vertex.shader", "Resources/Shader/fragment.shader");
+
             Vertex[] vertices = new Vertex[]
             {
                 new Vertex(-1f, -1f),
@@ -48,7 +51,9 @@ namespace RBGameEngine
 
         protected override void Render()
         {
+            shader.StartShader();
             mesh2D.Draw();
+            shader.StopShader();
         }
 
         protected override void ShutDown()

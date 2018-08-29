@@ -13,9 +13,9 @@ namespace RBGameEngine
     {
 
         //class variables
-        private int programID;
+        private readonly int programID;
 
-        public Shader(string vertexFileName, string fragmentFileName)
+        public Shader(string vertexFileName, string fragmentFileName = null)
         {
             programID = GL.CreateProgram();
 
@@ -101,6 +101,16 @@ namespace RBGameEngine
                 Console.WriteLine(GL.GetProgramInfoLog(programID));
                 Environment.Exit(1);
             }
+        }
+
+        public void StartShader()
+        {
+            GL.UseProgram(programID);
+        }
+
+        public void StopShader()
+        {
+            GL.UseProgram(0);
         }
 
         private static string ReadShader(string fileName)

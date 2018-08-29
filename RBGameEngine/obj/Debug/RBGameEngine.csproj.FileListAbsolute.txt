@@ -20,3 +20,5 @@ C:\Users\Will\Documents\PersonalGithub\2DEngine\RBGameEngine\bin\Debug\OpenTK.dl
 C:\Users\Will\Documents\PersonalGithub\2DEngine\RBGameEngine\bin\Debug\OpenTK.pdb
 C:\Users\Will\Documents\PersonalGithub\2DEngine\RBGameEngine\bin\Debug\OpenTK.xml
 C:\Users\Will\Documents\PersonalGithub\2DEngine\RBGameEngine\obj\Debug\RBGameEngine.csproj.CopyComplete
+C:\Users\Will\Documents\PersonalGithub\2DEngine\RBGameEngine\bin\Debug\Resources\Shader\fragment.shader
+C:\Users\Will\Documents\PersonalGithub\2DEngine\RBGameEngine\bin\Debug\Resources\Shader\vertex.shader
